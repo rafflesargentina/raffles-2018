@@ -1,0 +1,52 @@
+.page-footer {
+  background-color: $gray-800;
+  color: $gray-200;
+  float: left;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  padding: 1rem 2rem;
+  position: relative;
+  width: 100%;
+
+  &__copyright,
+  &__legal {
+    padding: 0.25rem 0;
+  }
+
+  &__link {
+    color: $gray-200;
+    &:focus,
+    &:hover {
+      color: $gray-200;
+    }
+  }
+}
+
+.tertiary-nav {
+  &__list {
+    display: block;
+    padding-left: 0;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__item--dark {
+    color: lightgray;
+  }
+
+  &__link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__link--dark {
+    color: $gray-200;
+     &:hover {
+       color: white;
+     }
+  }
+}

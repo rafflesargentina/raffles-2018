@@ -1,0 +1,18 @@
+@mixin gradient-background($color1, $color2) {
+    background: $color1;
+    background: -moz-linear-gradient(-45deg, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient(-45deg, $color1 0%, $color2 100%);
+    background: -o-linear-gradient(-45deg, $color1 0%, $color2 100%);
+    background: linear-gradient(135deg, $color1 0%, $color2 100%);
+}
+
+@mixin gradient-border($border-width, $color1, $color2) {
+  border: double $border-width transparent;
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, $color1, $color2);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  &::focus {
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, $color1, $color2);
+    border-color: transparent
+  }
+}

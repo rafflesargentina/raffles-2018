@@ -1,0 +1,63 @@
+
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+
+//
+// Color system
+//
+
+$gray-200: #e0e0e0;
+$gray-400: #cccccc;
+$gray-500: gray;
+$gray-600: dimgray;
+$gray-800: #333333;
+$black:    #000 !default;
+
+$blue: mediumblue;
+$pink: fuchsia;
+$cyan: cyan;
+
+$danger: deeppink;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-color: $gray-600;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: "Open Sans", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+$headings-font-family: "Fjalla One", sans-serif;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-width: 2px;
+$border-radius: 1rem;
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-border-radius-lg: 1.5rem;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-lg: 1.5rem;
+$btn-border-radius-sm: 0.75rem;
+
+// Cards
+
+$card-cap-bg: rgba($black, .075);
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-inner-border-radius: 0;

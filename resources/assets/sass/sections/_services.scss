@@ -1,0 +1,110 @@
+
+.services {
+  background-color: $gray-600;
+  min-height: calc(100vh - 5rem);
+
+  &-header {
+    color: white;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  &-inner {
+    @include clearfix();
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+  }
+
+  &__card {
+    background-color: $gray-800;
+
+    &::after {
+      bottom: 0;
+      content: '';
+      height: 4px;
+      position: absolute;
+      -o-transition: height .5s ease-in-out;
+      -moz-transition: height .5s ease-in-out;
+      -webkit-transition: height .5s ease-in-out;
+      transition: height .5s ease-in-out;
+      width: 100%;
+    }
+
+    &:focus::after,
+    &:hover::after {
+      height: 100%;
+      -o-transition: height .5s ease-in-out;
+      -moz-transition: height .5s ease-in-out;
+      -webkit-transition: height .5s ease-in-out;
+      transition: height .5s ease-in-out;
+      z-index: 1;
+    }
+  }
+
+  &__img {
+    border: 4px solid white;
+    border-radius: 50%;
+    width: 100%;
+  }
+
+  &__card-body {
+    color: rgba(255,255,255,0.9);
+    line-height: 1.2;
+    margin-top: 65%;
+    z-index: 2;
+  }
+
+  &__card-img {
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    &::after {
+      clear: both;
+      content: '';
+      display: block;
+      float: left;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__card-img-inner {
+    height: 100%;
+    padding: 25%;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__img {
+    border: 4px solid white;
+    border-radius: 50%;
+    background-color: $gray-400;
+    height: 100%;
+    margin-top: -25%;
+    position: relative;
+    width: 100%;
+  }
+
+  &__card--consulting {
+    &::after {
+      @include gradient-background(blue, cyan);
+    }
+  }
+
+  &__card--web_development {
+    &::after {
+      @include gradient-background(mediumblue, fuchsia);
+    }
+  }
+
+  &__card-img--consulting {
+    background-color: blue;
+  }
+
+  &__card-img--web_development {
+    background-color: mediumblue;
+  }
+}

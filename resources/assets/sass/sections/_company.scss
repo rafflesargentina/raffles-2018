@@ -1,0 +1,23 @@
+
+.company {
+  background-color: white;
+  min-height: calc(100vh - 5rem);
+
+  &-section {
+    padding: 12%;
+  }
+
+  &__p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .company {
+    &-header {
+      padding-left: 15%;
+    }
+  }
+}

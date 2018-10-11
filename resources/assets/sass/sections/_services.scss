@@ -51,8 +51,12 @@
   &__card-body {
     color: rgba(255,255,255,0.9);
     line-height: 1.2;
-    margin-top: 65%;
     z-index: 2;
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 75%;
+    }
   }
 
   &__card-img {

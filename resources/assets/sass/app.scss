@@ -11,6 +11,10 @@
 @import '~bootstrap/scss/bootstrap';
 @import "~vue-snotify/styles/material";
 
+body {
+  -moz-osx-font-smoothing: grayscale;
+}
+
 label {
   font-weight: bold;
   text-transform: uppercase;
@@ -105,6 +109,14 @@ section {
 
   .shadow--two {
     box-shadow: 1rem 1rem 3rem rgba(0,0,0,0.5), 0 0 0.5rem 0 rgba(0,0,0,0.5);
+  }
+}
+
+@media (min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+
+  body {
+    -moz-osx-font-smoothing: auto;
   }
 }
 

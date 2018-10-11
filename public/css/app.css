@@ -14486,6 +14486,10 @@ a.text-dark:focus {
           transform-origin: 50% 50%;
 }
 
+body {
+  -moz-osx-font-smoothing: grayscale;
+}
+
 label {
   font-weight: bold;
   text-transform: uppercase;
@@ -14604,6 +14608,12 @@ section {
   .shadow--two {
     -webkit-box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5), 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
             box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5), 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -moz-osx-font-smoothing: auto;
   }
 }
 
@@ -15007,8 +15017,13 @@ section {
 .services__card-body {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.2;
-  margin-top: 65%;
   z-index: 2;
+}
+
+.services__card-body::before {
+  content: "";
+  display: block;
+  padding-top: 75%;
 }
 
 .services__card-img {

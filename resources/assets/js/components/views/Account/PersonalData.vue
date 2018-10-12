@@ -170,9 +170,11 @@
             id="dzAvatar"
             ref="dzAvatar"
             :options="dzOptions"
+            @vdropzone-error="dzError"
             @vdropzone-files-added="dzAddOrRemoveFiles" 
             @vdropzone-removed-file="dzAddOrRemoveFiles" 
-            @vdropzone-processing="dzSetUrl"/>
+            @vdropzone-processing="dzSetUrl"
+            @vdropzone-queue-complete="dzAccept"/>
           <div class="modal-body">
             <div class="row">
               <div class="col-sm-6">
@@ -180,7 +182,7 @@
                   :disabled="!dzHasAcceptedFiles"
                   class="btn btn-block btn-outline-primary gradient-border--one"
                   type="button"
-                  @click="dzAccept"><span class="fa fa-check pr-2"/>Aceptar</button>
+                  @click="dzProcessQueue"><span class="fa fa-check pr-2"/>Aceptar</button>
               </div>
               <div class="col-sm-6">
                 <button
@@ -213,6 +215,7 @@ export default {
 
     data() {
         return {
+            dzHasError: false,
             dzOptions: {
                 addRemoveLinks: true,
                 autoProcessQueue: false,
@@ -263,8 +266,7 @@ export default {
 
     methods: {
         dzAccept() {
-            if (this.dzAvatar) {
-                this.dzAvatar.processQueue()
+            if (!this.dzHasError) {
                 window.$("#modalChangeAvatar").modal("hide")
                 return this.$parent.fetchUser()
             }
@@ -277,6 +279,17 @@ export default {
         dzCancel() {
             window.$("#modalChangeAvatar").modal("hide")
             return this.dzAvatar.removeAllFiles()
+        },
+
+        dzError() {
+            return this.dzHasError = true
+        },
+
+        dzProcessQueue() {
+            if (this.dzAvatar) {
+                this.dzHasError = false
+                return this.dzAvatar.processQueue()
+            }
         },
 
         dzSetUrl() {

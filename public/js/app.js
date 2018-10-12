@@ -25673,15 +25673,13 @@ var fetchAuthUser = function fetchAuthUser(_ref) {
     var commit = _ref.commit,
         dispatch = _ref.dispatch;
 
-    setTimeout(function () {
-        window.axios.get("/api/user").then(function (response) {
-            var user = response.data;
-            return commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["g" /* AUTH_USER */], user);
-        }).catch(function (error) {
-            commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["a" /* AUTH_ERROR */], error);
-            dispatch("logout");
-        });
-    }, 1000);
+    window.axios.get("/api/user").then(function (response) {
+        var user = response.data;
+        return commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["g" /* AUTH_USER */], user);
+    }).catch(function (error) {
+        commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["a" /* AUTH_ERROR */], error);
+        dispatch("logout");
+    });
 };
 
 var login = function login(_ref2, response) {
@@ -25711,22 +25709,20 @@ var logout = function logout(_ref3) {
     var commit = _ref3.commit;
 
     return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-            commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["e" /* AUTH_LOGOUT */]);
+        commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["e" /* AUTH_LOGOUT */]);
 
-            localStorage.removeItem("token");
-            sessionStorage.removeItem("token");
+        localStorage.removeItem("token");
+        sessionStorage.removeItem("token");
 
-            delete window.axios.defaults.headers.common["Authorization"];
+        delete window.axios.defaults.headers.common["Authorization"];
 
-            window.axios.get("/logout").then(function (response) {
-                return window.location.href = response.data.redirect;
-            }).catch(function (error) {
-                reject(error);
-            });
+        window.axios.get("/logout").then(function (response) {
+            return window.location.href = response.data.redirect;
+        }).catch(function (error) {
+            reject(error);
+        });
 
-            resolve();
-        }, 1000);
+        resolve();
     });
 };
 
@@ -25734,12 +25730,10 @@ var setAuthorizationHeader = function setAuthorizationHeader(_ref4, token) {
     var commit = _ref4.commit;
 
     return new Promise(function (resolve) {
-        setTimeout(function () {
-            var authorization = "Bearer " + token;
-            window.axios.defaults.headers.common["Authorization"] = authorization;
-            commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["b" /* AUTH_HEADER_SET */], authorization);
-            resolve();
-        }, 1000);
+        var authorization = "Bearer " + token;
+        window.axios.defaults.headers.common["Authorization"] = authorization;
+        commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["b" /* AUTH_HEADER_SET */], authorization);
+        resolve();
     }).catch(function (error) {
         commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["a" /* AUTH_ERROR */], error);
     });
@@ -25751,16 +25745,14 @@ var storeToken = function storeToken(_ref5, _ref6) {
         remember = _ref6.remember;
 
     return new Promise(function (resolve) {
-        setTimeout(function () {
-            if (remember) {
-                localStorage.setItem("token", token);
-            } else {
-                sessionStorage.setItem("token", token);
-            }
+        if (remember) {
+            localStorage.setItem("token", token);
+        } else {
+            sessionStorage.setItem("token", token);
+        }
 
-            commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["f" /* AUTH_TOKEN_STORE */], token);
-            resolve();
-        }, 1000);
+        commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["f" /* AUTH_TOKEN_STORE */], token);
+        resolve();
     }).catch(function (error) {
         commit(__WEBPACK_IMPORTED_MODULE_0__mutation_types__["a" /* AUTH_ERROR */], error);
     });
@@ -30015,6 +30007,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -30032,6 +30026,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
+            dzHasError: false,
             dzOptions: {
                 addRemoveLinks: true,
                 autoProcessQueue: false,
@@ -30078,8 +30073,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         dzAccept: function dzAccept() {
-            if (this.dzAvatar) {
-                this.dzAvatar.processQueue();
+            if (!this.dzHasError) {
                 window.$("#modalChangeAvatar").modal("hide");
                 return this.$parent.fetchUser();
             }
@@ -30090,6 +30084,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         dzCancel: function dzCancel() {
             window.$("#modalChangeAvatar").modal("hide");
             return this.dzAvatar.removeAllFiles();
+        },
+        dzError: function dzError() {
+            return this.dzHasError = true;
+        },
+        dzProcessQueue: function dzProcessQueue() {
+            if (this.dzAvatar) {
+                this.dzHasError = false;
+                return this.dzAvatar.processQueue();
+            }
         },
         dzSetUrl: function dzSetUrl() {
             if (this.dzAvatar) {
@@ -31124,9 +31127,11 @@ var render = function() {
                   ref: "dzAvatar",
                   attrs: { id: "dzAvatar", options: _vm.dzOptions },
                   on: {
+                    "vdropzone-error": _vm.dzError,
                     "vdropzone-files-added": _vm.dzAddOrRemoveFiles,
                     "vdropzone-removed-file": _vm.dzAddOrRemoveFiles,
-                    "vdropzone-processing": _vm.dzSetUrl
+                    "vdropzone-processing": _vm.dzSetUrl,
+                    "vdropzone-queue-complete": _vm.dzAccept
                   }
                 }),
                 _vm._v(" "),
@@ -31142,7 +31147,7 @@ var render = function() {
                             disabled: !_vm.dzHasAcceptedFiles,
                             type: "button"
                           },
-                          on: { click: _vm.dzAccept }
+                          on: { click: _vm.dzProcessQueue }
                         },
                         [
                           _c("span", { staticClass: "fa fa-check pr-2" }),

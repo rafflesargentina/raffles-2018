@@ -11,7 +11,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <p class="company__p">Somos una microempresa de origen Argentino formada por profesionales con una amplia trayectoria en la industria de las tecnologías de información. Nuestro modelo de negocio consiste en mantener y refinar una estructura de trabajo minimizada, que nos permite reducir costos y riesgos de tercerización, maximizando las ganancias. Nuestra compañía se encuentra en etapa Startup desde el año 2015.</p>
+              <p class="company__p">Somos una empresa Argentina formada por profesionales con una amplia trayectoria en las industrias de la informática y la comunicación. <strong>RAFFLES conecta a la gente con la tecnología de forma amigable y creativa.</strong> Creemos en una estructura de trabajo <strong>simple y optimizada</strong> con el foco puesto en <strong>reducir costos y maximizar las ganacias</strong>. Nos encontramos en etapa Startup desde el año 2015.</p>
             </div>
           </div>
         </section>

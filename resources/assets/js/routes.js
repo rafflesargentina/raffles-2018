@@ -40,6 +40,11 @@ const routes = [
         path: "/admin"
     },
     {
+        component: require("@/components/views/Company.vue"),
+        name: "Company",
+        path: "/company"
+    },
+    {
         component: require("@/components/views/Contact.vue"),
         meta: {
             footer: false
@@ -48,9 +53,14 @@ const routes = [
         path: "/contact"
     },
     {
-        component: require("@/components/views/Company.vue"),
-        name: "Company",
-        path: "/company"
+        component: require("@/components/views/Consulting.vue"),
+        name: "Consulting",
+        path: "/services/consulting"
+    },
+    {
+        component: require("@/components/views/DigitalMarketing.vue"),
+        name: "DigitalMarketing",
+        path: "/services/digital-marketing"
     },
     {
         component: require("@/components/views/Home.vue"),
@@ -72,11 +82,11 @@ const routes = [
         name: "Logout",
         path: "/logout"
     },
-    //{
-    //component: require("@/components/views/Portfolio.vue"),
-    //name: "Portfolio",
-    //path: "/portfolio"
-    //},
+    {
+    component: require("@/components/views/Portfolio.vue"),
+    name: "Portfolio",
+    path: "/portfolio"
+    },
     {
         beforeEnter: middleware.authNotRequired,
         component: require("@/components/views/auth/Register.vue"),
@@ -108,6 +118,15 @@ const routes = [
         component: require("@/components/views/Services.vue"),
         name: "Services",
         path: "/services"
+    },
+    {
+        component: require("@/components/views/WebDevelopment.vue"),
+        name: "WebDevelopment",
+        path: "/services/web-development"
+    },
+    {
+        path: "*",
+        component: require("@/components/views/Errors/PageNotFound")
     }
 ]
 

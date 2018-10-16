@@ -14,7 +14,7 @@
             data-target="#carousel-one" 
             data-slide-to="1"/>
         </ol>
-        <section class="carousel-item carousel-one-item-one active">
+        <section class="carousel-item carousel-one__item-one active">
           <div class="row">
             <div class="col-md-6">
               <div class="carousel-one-header">
@@ -23,14 +23,14 @@
                 <p class="carousel-one__p">Realizamos proyectos a medida, ya sea un blog, o un gestor de contenidos, e-commerce, o una aplicación con API con integración en La Nube.</p>
                 <div class="row">
                   <div class="col-md-6 col-lg-4">
-                    <a 
-                      href="#" 
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-plus pr-2"/>Leer más</a>
+                    <router-link 
+                      :to="{ name: 'WebDevelopment' }" 
+                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-plus pr-2"/>Leer más</router-link>
                   </div>
                   <div class="col-md-6 col-lg-4">
-                    <a 
-                      href="#" 
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-check pr-2"/>Contratar</a>
+                    <router-link 
+                      :to="{ name: 'Contact' }"
+                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-check pr-2"/>Contratar</router-link>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
             </div>
           </div>
         </section>
-        <section class="carousel-item carousel-one-item-two">
+        <section class="carousel-item carousel-one__item-two">
           <div class="row">
             <div class="col-md-6">
               <div class="carousel-one-header">
@@ -51,14 +51,14 @@
                 <p class="carousel-one__p">Te asesoramos en la planificación e implementación de tus proyectos. Brindamos soporte técnico en variedad de productos y servicios.</p>
                 <div class="row">
                   <div class="col-md-6 col-lg-4">
-                    <a 
-                      href="#" 
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-plus pr-2"/>Leer más</a>
+                    <router-link 
+                      :to="{ name: 'Consulting' }" 
+                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-plus pr-2"/>Leer más</router-link>
                   </div>
                   <div class="col-md-6 col-lg-4">
-                    <a 
-                      href="#" 
-                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-check pr-2"/>Contratar</a>
+                    <router-link 
+                      :to="{ name: 'Contact' }" 
+                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-check pr-2"/>Contratar</router-link>
                   </div>
                 </div>
               </div>
@@ -67,6 +67,35 @@
               <img 
                 class="carousel-one__img" 
                 src="/img/consulting.min.svg">
+            </div>
+          </div>
+        </section>
+        <section class="carousel-item carousel-one__item-three">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="carousel-one-header">
+                <h4 class="carousel-one__subtitle">Servicios</h4>
+                <h1 class="carousel-one__title display-4">MARKETING DIGITAL</h1>
+                <p class="carousel-one__p">Tus ideas posicionadas en la Web: SEO/SEM, Media Planning y Social Media.</p>
+                <div class="row">
+                  <div class="col-md-6 col-lg-4">
+                    <router-link
+                      :to="{ name: 'DigitalMarketing' }"
+                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-plus pr-2"/>Leer más</router-link>
+                  </div>
+                  <div class="col-md-6 col-lg-4">
+                    <router-link
+                      :to="{ name: 'Contact' }"
+                      class="btn btn-lg btn-block btn-outline-light d-none d-md-inline-block"><span class="fa fa-check pr-2"/>Contratar</router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img
+                class="carousel-one__img"
+                src="/img/digital_marketing.min.svg"
+                style="padding:10%;">
             </div>
           </div>
         </section>
@@ -103,7 +132,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <p class="company__p">Somos una microempresa de origen Argentino formada por profesionales con una amplia trayectoria en la industria de las tecnologías de información. Nuestro modelo de negocio consiste en mantener y refinar una estructura de trabajo minimizada, que nos permite reducir costos y riesgos de tercerización, maximizando las ganancias. Nuestra compañía se encuentra en etapa Startup desde el año 2015.</p>
+              <p class="company__p">Somos una empresa Argentina formada por profesionales con una amplia trayectoria en la industrias de la informática y la comunicación. <strong>RAFFLES conecta a la gente con la tecnología de forma amigable y creativa.</strong> Creemos en una estructura de trabajo <strong>simple y optimizada</strong> con el foco puesto en <strong>reducir costo y maximizar las ganacias</strong>. Nos encontramos en etapa Startup desde el año 2015.</p>
             </div>
           </div>
         </section>
@@ -131,14 +160,14 @@
                     <p class="card__p">Realizamos proyectos a medida, ya sea un blog, o un gestor de contenidos, e-commerce, o una aplicación con API con integración en La Nube.</p>
                     <div class="row">
                       <div class="col-lg-6 mb-3">
-                        <a 
-                          href="#" 
-                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-plus pr-2"/>Leer más</a>
+                        <router-link 
+                          :to="{ name: 'WebDevelopment' }" 
+                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-plus pr-2"/>Leer más</router-link>
                       </div>
                       <div class="col-lg-6 mb-3">
-                        <a 
-                          href="#" 
-                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-check pr-2"/>Contratar</a>
+                        <router-link 
+                          :to="{ name: 'Contact' }" 
+                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-check pr-2"/>Contratar</router-link>
                       </div>
                     </div>
                   </div>
@@ -159,14 +188,42 @@
                     <p class="card__p">Te asesoramos en la planificación e implementación de tus proyectos. Brindamos soporte técnico en variedad de productos y servicios.</p>
                     <div class="row">
                       <div class="col-lg-6 mb-3">
-                        <a 
-                          href="#" 
-                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-plus pr-2"/>Leer más</a>
+                        <router-link 
+                          :to="{ name: 'Consulting' }" 
+                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-plus pr-2"/>Leer más</router-link>
                       </div>
                       <div class="col-lg-6 mb-3">
-                        <a 
-                          href="#" 
-                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-check pr-2"/>Contratar</a>
+                        <router-link 
+                          :to="{ name: 'Consulting' }"
+                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-check pr-2"/>Contratar</router-link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-4 mb-3">
+                <div class="card services__card services__card--digital_marketing shadow--one">
+                  <div class="card-img services__card-img pb-0">
+                    <div class="services__card-img-inner">
+                      <img
+                        class="services__img services__card-img--digital_marketing shadow--one"
+                        src="/img/digital_marketing.min.svg">
+                    </div>
+                  </div>
+                  <div class="card-body services__card-body text-center">
+                    <h3 class="card-title">MARKETING DIGITAL</h3>
+                    <p class="card__p">Tus ideas posicionadas en la Web: SEO/SEM, Media Planning y Social Media.<br/><br/></p>
+                    <div class="row">
+                      <div class="col-lg-6 mb-3">
+                        <router-link
+                          :to="{ name: 'DigitalMarketing' }"
+                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-plus pr-2"/>Leer más</router-link>
+                      </div>
+                      <div class="col-lg-6 mb-3">
+                        <router-link
+                          :to="{ name: 'Contact' }"
+                          class="btn btn-lg btn-block btn-outline-light"><span class="fa fa-check pr-2"/>Contratar</router-link>
                       </div>
                     </div>
                   </div>

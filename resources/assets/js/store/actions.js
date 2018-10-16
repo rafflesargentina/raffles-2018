@@ -78,7 +78,7 @@ export const storeToken = ({ commit }, { token, remember }) => {
         commit(types.AUTH_TOKEN_STORE, token)
         resolve()
     })
-    .catch(error => {
-        commit(types.AUTH_ERROR, error)
-    })
+        .catch(error => {
+            commit(types.AUTH_ERROR, error)
+        })
 }

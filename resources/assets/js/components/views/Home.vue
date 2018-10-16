@@ -213,7 +213,7 @@
                   </div>
                   <div class="card-body services__card-body text-center">
                     <h3 class="card-title">MARKETING DIGITAL</h3>
-                    <p class="card__p">Tus ideas posicionadas en la Web: SEO/SEM, Media Planning y Social Media.<br/><br/></p>
+                    <p class="card__p">Tus ideas posicionadas en la Web: SEO/SEM, Media Planning y Social Media.<br><br></p>
                     <div class="row">
                       <div class="col-lg-6 mb-3">
                         <router-link

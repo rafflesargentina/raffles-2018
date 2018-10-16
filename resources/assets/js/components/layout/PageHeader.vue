@@ -16,11 +16,9 @@
           <li class="main-nav__item main-nav__item--light"><router-link 
             to="/services" 
             class="main-nav__link main-nav__link--light">SERVICIOS</router-link></li>
-          <!--
           <li class="main-nav__item main-nav__item--light"><router-link 
             to="/portfolio" 
             class="main-nav__link main-nav__link--light">PORTFOLIO</router-link></li>
-          -->
           <li class="main-nav__item main-nav__item--light"><router-link 
             to="/contact" 
             class="main-nav__link main-nav__link--light">CONTACTO</router-link></li>

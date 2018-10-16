@@ -83,9 +83,9 @@ const routes = [
         path: "/logout"
     },
     {
-    component: require("@/components/views/Portfolio.vue"),
-    name: "Portfolio",
-    path: "/portfolio"
+        component: require("@/components/views/Portfolio.vue"),
+        name: "Portfolio",
+        path: "/portfolio"
     },
     {
         beforeEnter: middleware.authNotRequired,

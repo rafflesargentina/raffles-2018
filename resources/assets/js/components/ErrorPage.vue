@@ -4,12 +4,14 @@
       <main class="error_page-content">
         <section class="error_page-section">
           <div class="error_page-header">
-            <slot name="subtitle"></slot>
-            <slot name="title"></slot>
+            <slot name="subtitle"/>
+            <slot name="title"/>
           </div>
-          <slot name="description"></slot>
+          <slot name="description"/>
           <div class="row no-gutters">
-            <router-link to="/" class="col-sm-4 btn btn-lg btn-primary gradient-background--one border-0"><span class="fa fa-arrow-left pr-2"/>Volver al inicio</router-link>
+            <router-link 
+              to="/" 
+              class="col-sm-4 btn btn-lg btn-primary gradient-background--one border-0"><span class="fa fa-arrow-left pr-2"/>Volver al inicio</router-link>
           </div>
         </section>
       </main>

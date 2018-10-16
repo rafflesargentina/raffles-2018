@@ -15,8 +15,13 @@
           <div class="account__card-img">
             <div class="account__card-img-inner">
               <img 
-                :src="form.avatar_url" 
-                class="account__img preview shadow--one">
+                v-if="form.avatar" 
+                :src="form.avatar_url"
+                class="account__img preview shadow--one"
+              >
+              <div
+                v-if="!form.avatar"
+                class="account__img preview shadow--one"/>
             </div>
           </div>
           <section class="card-body account__card-body">

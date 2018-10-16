@@ -1,10 +1,10 @@
 <style lang="scss" scoped>
-.legal {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+ul > li > ul > li {
+  list-style-type: upper-alpha;
+}
 
-  ul:nth-child(1) {
-    list-style-type: upper-alpha;
-  }
+ol > li > ol > li {
+  list-style-type: lower-alpha;
 }
 </style>
 
@@ -13,12 +13,13 @@
     <ol>
       <li><strong>Aceptación del Contrato.</strong> Los presentes Términos y Condiciones regulan la navegación y correcta utilización del sitio www.raffles.com.ar (en adelante, el “sitio web”) por parte de cualquier persona que acceda al mismo. El acceso y/o uso del sitio web es totalmente voluntario y atribuye a quien lo realiza la condición de USUARIO.<br> Estos Términos y Condiciones son de carácter obligatorio y vinculante para el USUARIO, y constituyen un contrato entre éste y los responsables de RAFFLES ARGENTINA SRL - CUIT 30-71470679-5, Julián Segundo Agüero 1511, 5º B, Florida Oeste (CP 1604), Provincia de Buenos Aires, (en adelante “RAFFLES”). Sin embargo, no podrá ser interpretado como un contrato de licencia, sociedad, mandato, agencia, ni de cualquier otro tipo.<br> Por lo tanto, la aceptación de los presentes Términos y Condiciones implica que el USUARIO los leyó y los comprendió. Si el USUARIO no estuviera de acuerdo con estas disposiciones, deberá abstenerse de acceder al sitio web y/o de utilizar cualquiera de sus servicios.</li>
       <li><strong>Modificación del Contrato.</strong> Estos Términos y Condiciones podrán ser modificados o sustituidos en cualquier momento y a exclusivo criterio de RAFFLES. Las modificaciones entrarán en vigencia desde su publicación en el sitio web. La utilización que el USUARIO haga con posterioridad a dicha publicación constituirá la aceptación a la misma. Si el USUARIO no estuviere de acuerdo con las modificaciones de los Términos y Condiciones podrá prescindir de utilizar los servicios de RAFFLES y/o darse de baja como USUARIO del sitio web.</li>
-      <li><strong>Objetivo.</strong> RAFFLES es una empresa joven de desarrollos informáticos que busca conectar a la gente con la tecnología de manera accesible y creativa. El objetivo de RAFFLES es el de solucionar problemas tanto para el usuario final como para emprendedores y empresas, a través de productos tales como plataformas transaccionales, sitios web y aplicaciones móviles.<br> RAFFLES es una empresa pionera en detectar y resolver problemas emergentes de nuestra sociedad, y en constante actualización.</li>
+      <li><strong>Objetivo.</strong> RAFFLES conecta a la gente con la tecnología de forma amigable y creativa.</li>
       <li><strong>Navegación.</strong> El USUARIO puede navegar libremente por el sitio web, sin embargo para contratar los servicios de RAFFLES deberá ser mayor de edad, estar legalmente capacitado y aceptar estos Términos y Condiciones.<br> RAFFLES no se responsabiliza por la veracidad o certeza de los datos provistos por el USUARIO y podrá sancionar o dar de baja a USUARIOS en la medida que considere que están violando este contrato o las leyes vigentes.</li>
       <li><strong>Servicios.</strong>Los USUARIOS podrán acceder y contratar los siguientes servicios:
         <ol>
           <li>Desarrollo Web</li>
           <li>Consultoría</li>
+          <li>Marketing Digital</li>
         </ol>
       </li>
       <li><strong>Obligaciones generales.</strong> Los USUARIOS se obligan a utilizar el sitio web en forma responsable. En particular, y sin que la lista que figura a continuación implique excluir otros actos, el USUARIO se obliga a:
@@ -45,7 +46,7 @@
       <li><strong>Interrupción del Sitio.</strong> RAFFLES se reserva el derecho de interrumpir, suspender o modificar en cualquier momento los contenidos ofrecidos, ya sea en forma permanente o transitoria. No se requerirá la conformidad del USUARIO, ni será necesario aviso previo alguno. Tampoco se garantiza el acceso o posibilidad de uso permanente del sitio web, ya que éste podría interrumpirse por mantenimiento o por cuestiones técnicas ajenas a RAFFLES. RAFFLES no se responsabiliza por los daños y perjuicios de cualquier tipo que pueda experimentar el USUARIO que tengan como causa fallas o falta de correcta conexión en las redes de telecomunicaciones y que provoquen la interrupción o cancelación de la información y contenidos brindados en RAFFLES, ya sea durante la navegación en el mismo o con carácter previo.</li>
       <li><strong>Jurisdicción y ley aplicable.</strong> Los presentes Términos y Condiciones se encuentran regidos sin excepción y en todos sus puntos por las leyes de la República Argentina y serán interpretados de acuerdo a ellas.<br> Ante cualquier diferencia, desacuerdo o conflicto derivado de la interpretación, validez, alcance y/o aplicación de los presentes Términos y Condiciones, el USUARIO se comunicará con los responsables de RAFFLES de manera fehaciente, haciéndole llegar su reclamo, para que las partes traten de arribar a un acuerdo en el plazo de treinta días corridos desde la notificación de la controversia. En caso de que no sea posible arribar a una solución amigable, en el plazo mencionado, las partes se someterán a los Tribunales ordinarios de la Ciudad Autónoma de Buenos Aires, República Argentina, con competencia en la materia.</li>
     </ol>
-    <i>RAFFLES ARGENTINA SRL - CUIT 30-71470679-5, Julián Segundo Agüero 1511, 5º B, Florida Oeste, Provincia de Buenos Aires. Última modificación: 1 de junio de 2015.</i>
+    <i>RAFFLES ARGENTINA SRL - CUIT 30-71470679-5, Julián Segundo Agüero 1511, 5º B, Florida Oeste, Provincia de Buenos Aires. Última modificación: 16 de Octubre de 2018.</i>
   </div>
 </template>
 

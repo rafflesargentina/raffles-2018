@@ -1,10 +1,10 @@
 <style lang="scss" scoped>
-.legal {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+ul > li > ul > li {
+  list-style-type: upper-alpha;
+}
 
-  ul:nth-of-type(1) {
-    list-style-type: upper-alpha;
-  }
+ol > li > ol > li {
+  list-style-type: lower-alpha;
 }
 </style>
 

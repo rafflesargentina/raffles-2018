@@ -14575,6 +14575,11 @@ section {
   background: linear-gradient(135deg, mediumblue 0%, cyan 100%);
 }
 
+.gradient-background--three {
+  background: brown;
+  background: linear-gradient(135deg, brown 0%, goldenrod 100%);
+}
+
 .legal {
   font-size: 0.8rem;
   line-height: 1.2;
@@ -14681,6 +14686,10 @@ section {
   z-index: 1000;
 }
 
+.page-header--dark {
+  background-color: #333333;
+}
+
 .page-header--light {
   background-color: white;
 }
@@ -14691,6 +14700,7 @@ section {
   background-repeat: no-repeat;
   background-size: 8rem auto;
   height: 3rem;
+  line-height: 3rem;
 }
 
 .main-nav {
@@ -14844,18 +14854,23 @@ section {
   margin-top: 15%;
 }
 
-.carousel-one-item {
+.carousel-one__item {
   min-height: 40rem;
 }
 
-.carousel-one-item-one {
+.carousel-one__item-one {
   background: mediumblue;
   background: linear-gradient(135deg, mediumblue 0%, fuchsia 100%);
 }
 
-.carousel-one-item-two {
+.carousel-one__item-two {
   background: mediumblue;
   background: linear-gradient(135deg, mediumblue 0%, cyan 100%);
+}
+
+.carousel-one__item-three {
+  background: brown;
+  background: linear-gradient(135deg, brown 0%, goldenrod 100%);
 }
 
 .carousel-one__img {
@@ -15065,6 +15080,11 @@ section {
   background: linear-gradient(135deg, blue 0%, cyan 100%);
 }
 
+.services__card--digital_marketing::after {
+  background: brown;
+  background: linear-gradient(135deg, brown 0%, goldenrod 100%);
+}
+
 .services__card--web_development::after {
   background: mediumblue;
   background: linear-gradient(135deg, mediumblue 0%, fuchsia 100%);
@@ -15072,6 +15092,10 @@ section {
 
 .services__card-img--consulting {
   background-color: blue;
+}
+
+.services__card-img--digital_marketing {
+  background-color: brown;
 }
 
 .services__card-img--web_development {

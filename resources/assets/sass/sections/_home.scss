@@ -4,7 +4,7 @@
     margin-top: 15%;
   }
 
-  &-item {
+  &__item {
     min-height: 40rem;
 
     &-one {
@@ -13,6 +13,10 @@
 
     &-two {
       @include gradient-background(mediumblue, cyan);
+    }
+
+    &-three {
+      @include gradient-background(brown, goldenrod);
     }
   }
 

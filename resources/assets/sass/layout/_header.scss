@@ -6,6 +6,10 @@
   width: 100%;
   z-index: $zindex-dropdown;
 
+  &--dark {
+    background-color: $gray-800;
+  }
+
   &--light {
     background-color: white;
   }
@@ -16,6 +20,7 @@
     background-repeat: no-repeat;
     background-size: 8rem auto;
     height: 3rem;
+    line-height: 3rem;
   }
 }
 

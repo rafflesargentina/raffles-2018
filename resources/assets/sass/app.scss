@@ -78,6 +78,10 @@ section {
   @include gradient-background(mediumblue, cyan);
 }
 
+.gradient-background--three {
+  @include gradient-background(brown, goldenrod);
+}
+
 .legal {
   font-size: 0.8rem;
   line-height: 1.2;

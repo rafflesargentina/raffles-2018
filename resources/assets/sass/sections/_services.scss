@@ -98,6 +98,12 @@
     }
   }
 
+  &__card--digital_marketing {
+    &::after {
+      @include gradient-background(brown, goldenrod)
+    }
+  }
+
   &__card--web_development {
     &::after {
       @include gradient-background(mediumblue, fuchsia);
@@ -106,6 +112,10 @@
 
   &__card-img--consulting {
     background-color: blue;
+  }
+
+  &__card-img--digital_marketing {
+    background-color: brown;
   }
 
   &__card-img--web_development {

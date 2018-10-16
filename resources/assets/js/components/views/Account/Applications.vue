@@ -13,17 +13,8 @@
 </template>
 
 <script>
-import AuthorizedClients from "../../passport/AuthorizedClients"
-import Clients from "../../passport/Clients"
-import PersonalAccessTokens from "../../passport/PersonalAccessTokens"
-
 export default {
 
     name: "Applications",
-    components: {
-        AuthorizedClients,
-        Clients,
-        PersonalAccessTokens
-    },
 }
 </script>

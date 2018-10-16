@@ -119,11 +119,11 @@
 </template>
 
 <script>
-import AccessPersonalData from "./legal/AccessPersonalData"
-import PageFooter from "./layout/PageFooter"
-import PageHeader from "./layout/PageHeader"
-import PolicyOfPrivacy from "./legal/PolicyOfPrivacy"
-import TermsAndConditions from "./legal/TermsAndConditions"
+import AccessPersonalData from "@/components/legal/AccessPersonalData"
+import PageFooter from "@/components/layout/PageFooter"
+import PageHeader from "@/components/layout/PageHeader"
+import PolicyOfPrivacy from "@/components/legal/PolicyOfPrivacy"
+import TermsAndConditions from "@/components/legal/TermsAndConditions"
 
 export default {
 

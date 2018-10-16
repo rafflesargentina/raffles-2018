@@ -1,4 +1,4 @@
-import * as middleware from "./middleware"
+import * as middleware from "@/middleware"
 import Vue from "vue"
 import VueRouter from "vue-router"
 
@@ -11,24 +11,36 @@ const routes = [
             {
                 name: "Account",
                 path: "",
-                component: require("./components/views/Account/PersonalData.vue")
+                component: require("@/components/views/Account/PersonalData.vue")
             },
             //{
             //name: "AdquiredServices",
             //path: "adquired-services",
-            //component: require("./components/views/Account/AdquiredServices.vue")
+            //component: require("@/components/views/Account/AdquiredServices.vue")
             //},
             //{
             //name: "Applications",
             //path: "applications",
-            //component: require("./components/views/Account/Applications.vue")
+            //component: require("@/components/views/Account/Applications.vue")
             //},
         ],
-        component: require("./components/views/Account/Account.vue"),
+        component: require("@/components/views/Account/Account.vue"),
         path: "/account"
     },
     {
-        component: require("./components/views/Contact.vue"),
+        beforeEnter: middleware.authRequired,
+        children: [
+            {
+                name: "Admin",
+                path: "",
+                component: require("@/components/views/Admin/Article/ArticlesIndex.vue")
+            },
+        ],
+        component: require("@/components/views/Admin/Admin.vue"),
+        path: "/admin"
+    },
+    {
+        component: require("@/components/views/Contact.vue"),
         meta: {
             footer: false
         },
@@ -36,18 +48,18 @@ const routes = [
         path: "/contact"
     },
     {
-        component: require("./components/views/Company.vue"),
+        component: require("@/components/views/Company.vue"),
         name: "Company",
         path: "/company"
     },
     {
-        component: require("./components/views/Home.vue"),
+        component: require("@/components/views/Home.vue"),
         name: "Home",
         path: "/"
     },
     {
         beforeEnter: middleware.authNotRequired,
-        component: require("./components/views/auth/Login.vue"),
+        component: require("@/components/views/auth/Login.vue"),
         meta: {
             footer: false
         },
@@ -56,18 +68,18 @@ const routes = [
     },
     {
         beforeEnter: middleware.authRequired,
-        component: require("./components/views/auth/Logout.vue"),
+        component: require("@/components/views/auth/Logout.vue"),
         name: "Logout",
         path: "/logout"
     },
     //{
-    //component: require("./components/views/Portfolio.vue"),
+    //component: require("@/components/views/Portfolio.vue"),
     //name: "Portfolio",
     //path: "/portfolio"
     //},
     {
         beforeEnter: middleware.authNotRequired,
-        component: require("./components/views/auth/Register.vue"),
+        component: require("@/components/views/auth/Register.vue"),
         meta: {
             footer: false
         },
@@ -76,7 +88,7 @@ const routes = [
     },
     {
         beforeEnter: middleware.authNotRequired,
-        component: require("./components/views/auth/passwords/Reset.vue"),
+        component: require("@/components/views/auth/passwords/Reset.vue"),
         meta: {
             footer: false
         },
@@ -85,7 +97,7 @@ const routes = [
     },
     {
         beforeEnter: middleware.authNotRequired,
-        component: require("./components/views/auth/passwords/Request.vue"),
+        component: require("@/components/views/auth/passwords/Request.vue"),
         meta: {
             footer: false
         },
@@ -93,7 +105,7 @@ const routes = [
         path: "/password/request"
     },
     {
-        component: require("./components/views/Services.vue"),
+        component: require("@/components/views/Services.vue"),
         name: "Services",
         path: "/services"
     }

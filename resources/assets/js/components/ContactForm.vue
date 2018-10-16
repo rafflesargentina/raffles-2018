@@ -99,7 +99,7 @@ textarea {
 </template>
 
 <script>
-import Form from "../utilities/Form"
+import Form from "@/utilities/Form"
 
 let fields = {
     email: "",

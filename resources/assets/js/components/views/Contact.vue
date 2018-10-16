@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import ContactForm from "../ContactForm"
-import FormLegal from "../legal/FormLegal"
+import ContactForm from "@/components/ContactForm"
+import FormLegal from "@/components/legal/FormLegal"
 
 export default {
     components: {

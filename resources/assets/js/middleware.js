@@ -1,4 +1,4 @@
-import store from "./store/store"
+import store from "@/store/store"
 
 export const authRequired = (to, from, next) => {
     if (store.getters.isAuthenticated) {

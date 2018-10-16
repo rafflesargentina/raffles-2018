@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ResetForm from "../../../auth/passwords/ResetForm"
+import ResetForm from "@/components/auth/passwords/ResetForm"
 
 export default {
     components: {

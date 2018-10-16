@@ -18,3 +18,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
 if (mix.inProduction()) {
     mix.version()
 }
+
+const path = require('path')
+
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            '@': path.resolve('resources/assets/js')
+        }
+    }
+})

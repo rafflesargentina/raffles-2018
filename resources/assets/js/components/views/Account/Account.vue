@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import PersonalData from "./PersonalData"
+import PersonalData from "@/components/views/Account/PersonalData"
 
 export default {
     components: {

@@ -1,6 +1,6 @@
-import * as actions from "./actions"
-import * as getters from "./getters"
-import auth from "./modules/auth"
+import * as actions from "@/store/actions"
+import * as getters from "@/store/getters"
+import auth from "@/store/modules/auth"
 import Vue from "vue"
 import Vuex from "vuex"
 
@@ -10,9 +10,9 @@ const store = new Vuex.Store({
     actions,
     getters,
     modules: {
-        auth
+        auth,
     },
-    strict: true,
+    strict: process.env.NODE_ENV !== 'production'
 })
 
 export default store

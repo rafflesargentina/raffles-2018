@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import FormLegal from "../../legal/FormLegal"
-import RegisterForm from "../../auth/RegisterForm"
+import FormLegal from "@/components/legal/FormLegal"
+import RegisterForm from "@/components/auth/RegisterForm"
 
 export default {
     components: {

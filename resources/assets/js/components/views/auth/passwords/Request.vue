@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import RequestForm from "../../../auth/passwords/RequestForm"
+import RequestForm from "@/components/auth/passwords/RequestForm"
 
 export default {
     components: {

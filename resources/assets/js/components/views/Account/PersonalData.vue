@@ -200,8 +200,8 @@
 
 <script>
 import vue2Dropzone from "vue2-dropzone"
-import Form from "../../../utilities/Form"
-import FormLegal from "../../legal/FormLegal"
+import Form from "@/utilities/Form"
+import FormLegal from "@/components/legal/FormLegal"
 
 import "vue2-dropzone/dist/vue2Dropzone.min.css"
 

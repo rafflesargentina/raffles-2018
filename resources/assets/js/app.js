@@ -5,13 +5,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import store from "./store/store"
-import router from "./routes"
-import App from "./components/App"
+import store from "@/store/store"
+import router from "@/routes"
+import App from "@/components/App"
 import Vue from "vue"
 import Snotify from "vue-snotify"
 
-require("./bootstrap")
+require("@/bootstrap")
 
 Vue.use(Snotify)
 
@@ -23,17 +23,17 @@ Vue.use(Snotify)
 
 Vue.component(
     "passport-clients",
-    require("./components/passport/Clients.vue")
+    require("@/components/passport/Clients.vue")
 )
 
 Vue.component(
     "passport-authorized-clients",
-    require("./components/passport/AuthorizedClients.vue")
+    require("@/components/passport/AuthorizedClients.vue")
 )
 
 Vue.component(
     "passport-personal-access-tokens",
-    require("./components/passport/PersonalAccessTokens.vue")
+    require("@/components/passport/PersonalAccessTokens.vue")
 )
 
 const app = new Vue({

@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex align-items-center full-height w-100">
-    <h6 class="text-center">Cerrarando sesión...</h6>
+  <div class="d-flex align-items-center full-height text-center">
+    <h1 class="w-100 display-4">Cerrarando sesión...</h1>
   </div>
 </template>
 

@@ -66,6 +66,7 @@
 
 <script>
 import Form from "../../utilities/Form"
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 let fields = {
     email: "",
@@ -91,12 +92,13 @@ export default {
     },
 
     methods: {
+        ...mapActions(['login']),
         login() {
             this.submitted = true
 
             this.form.post("/login")
                 .then(response => {
-                    return this.$store.dispatch("login", response)
+                    return this.$store.dispatch('auth/login', response)
                 })
                 .then(response => {
                     let redirect = this.$route.query.intended || response.redirect

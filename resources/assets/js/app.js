@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import store from "@/store/store"
+import store from "@/store"
 import router from "@/routes"
 import App from "@/components/App"
 import Vue from "vue"
@@ -41,9 +41,9 @@ const app = new Vue({
         const token = localStorage.getItem("token") || sessionStorage.getItem("token")
 
         if (null !== token) {
-            this.$store.dispatch("setAuthorizationHeader", token)
+            this.$store.dispatch("auth/setAuthorizationHeader", token)
                 .then(()=> {
-                    return this.$store.dispatch("fetchAuthUser")
+                    return this.$store.dispatch("auth/fetchAuthUser")
                 })
                 .catch(error => {
                     console.error(error)
@@ -53,7 +53,7 @@ const app = new Vue({
         window.axios.interceptors.response.use(undefined, function(error) {
             return new Promise(()=> {
                 if ((error.status > 400 && error.status < 420) && error.config && !error.config.__isRetryRequest) {
-                    return this.$store.dispatch("logout")
+                    return this.$store.dispatch("auth/logout")
                 }
 
                 throw error

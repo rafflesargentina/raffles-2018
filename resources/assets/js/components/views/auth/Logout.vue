@@ -7,7 +7,7 @@
 <script>
 export default {
     mounted() {
-        return this.$store.dispatch("logout")
+        return this.$store.dispatch("auth/logout")
     }
 }
 </script>

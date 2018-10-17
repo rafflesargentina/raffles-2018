@@ -109,11 +109,11 @@ export default {
 
     computed: {
         isAuthenticated() {
-            return this.$store.getters.isAuthenticated
+            return this.$store.getters['auth/isAuthenticated']
         },
 
         username() {
-            let username = this.$store.getters.username
+            let username = this.$store.getters['auth/username']
             if (undefined != username) {
                 if (username.length > 20) {
                     return username.substr(0, 17) + "..."

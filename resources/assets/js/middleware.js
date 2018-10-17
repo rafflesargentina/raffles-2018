@@ -1,7 +1,7 @@
-import store from "@/store/store"
+import store from "@/store"
 
 export const authRequired = (to, from, next) => {
-    if (store.getters.isAuthenticated) {
+    if (store.getters['auth/isAuthenticated']) {
         next()
         return
     }
@@ -12,7 +12,7 @@ export const authRequired = (to, from, next) => {
 }
 
 export const authNotRequired = (to, from, next) => {
-    if (!store.getters.isAuthenticated) {
+    if (!store.getters['auth/isAuthenticated']) {
         next()
         return
     }

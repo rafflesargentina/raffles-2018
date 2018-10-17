@@ -157,7 +157,7 @@ export default {
             this.submitted = true
 
             this.form.post("/register").then(response => {
-                return this.$store.dispatch("login", response)
+                return this.$store.dispatch("auth/login", response)
             }).then(response => {
                 this.$snotify.success("Fuiste registrado correctamente.")
                 return this.$router.push(response.redirect)

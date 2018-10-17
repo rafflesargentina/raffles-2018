@@ -32,7 +32,8 @@
   }
 
   &__item {
-    display: inline-block;
+    display: block;
+    font-size: $font-size-lg;
     padding: 0 1rem;
     font-weight: bold;
     line-height: 3rem;
@@ -100,5 +101,14 @@
     position: absolute;
     top: 5rem;
     width: 100%;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .main-nav {
+    &__item {
+      display: inline-block;
+      font-size: $font-size-base;
+    }
   }
 }

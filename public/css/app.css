@@ -14525,6 +14525,28 @@ section {
   line-height: 1.6;
 }
 
+.error_page-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+
+.error_page-inner::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.error_page-section {
+  padding: 12%;
+}
+
+.error_page__p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
 .fa {
   line-height: inherit;
 }
@@ -14585,6 +14607,10 @@ section {
   line-height: 1.2;
   margin-top: 2rem;
   text-align: justify;
+}
+
+.modal-content .legal {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .shadow--one {
@@ -14713,7 +14739,8 @@ section {
 }
 
 .main-nav__item {
-  display: inline-block;
+  display: block;
+  font-size: 1.125rem;
   padding: 0 1rem;
   font-weight: bold;
   line-height: 3rem;
@@ -14782,6 +14809,13 @@ section {
   position: absolute;
   top: 5rem;
   width: 100%;
+}
+
+@media (min-width: 992px) {
+  .main-nav__item {
+    display: inline-block;
+    font-size: 0.9rem;
+  }
 }
 
 .sidebar {

@@ -50,6 +50,25 @@ section {
   line-height: $line-height-base;
 }
 
+.error_page {
+  &-inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    @include clearfix;
+  }
+
+  &-section {
+    padding: 12%;
+  }
+
+  &__p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+}
+
 .fa {
   line-height: inherit;
 }
@@ -87,6 +106,10 @@ section {
   line-height: 1.2;
   margin-top: 2rem;
   text-align: justify;
+}
+
+.modal-content .legal {
+  font-family: $font-family-monospace;
 }
 
 .shadow--one {

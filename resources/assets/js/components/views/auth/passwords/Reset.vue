@@ -1,14 +1,12 @@
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Reestablezca su contraseña</div>
-          <div class="card-body">
-            <reset-form/>
-          </div>
-        </div>
-      </div>
+  <div class="register">
+    <div class="register-inner">
+      <main class="register-content card register__card shadow--two">
+        <section class="register-section">
+          <h3 class="register-header">Reestablecé tu contraseña</h3>
+          <reset-form/>
+        </section>
+      </main>
     </div>
   </div>
 </template>

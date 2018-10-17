@@ -1,85 +1,73 @@
 <template>
-  <div>
-    <form
-      :class="[validated ? 'needs-validation' : 'needs-validation']"
-      method="POST"
-      action="/password/reset"
-      novalidate
-      @submit.prevent="reset"
-      @keydown="form.errors.clear($event.target.name)">
-      <div class="form-group row">
-        <input 
-          v-model="token" 
-          type="hidden" 
-          name="token">
-        <label
-          for="email"
-          class="col-sm-4 col-form-label text-md-right">Email</label>
-        <div class="col-md-6">
-          <input
-            :class="{ 'is-invalid': form.errors.has('email') }"
-            v-model="form.email"
-            class="form-control"
-            type="email"
-            name="email"
-            placeholder="Email"
-            autofocus="">
-          <span
-            v-if="form.errors.has('email')"
-            class="invalid-feedback"
-            role="alert">
-            <strong v-text="form.errors.get('email')"/>
-          </span>
-        </div>
-      </div>
+  <form
+    :class="[validated ? 'needs-validation' : 'needs-validation']"
+    method="POST"
+    action="/password/reset"
+    novalidate
+    @submit.prevent="reset"
+    @keydown="form.errors.clear($event.target.name)">
 
-      <div class="form-group row">
-        <label
-          for="password"
-          class="col-md-4 col-form-label text-md-right">Contraseña</label>
-        <div class="col-md-6">
-          <input
-            :class="{ 'is-invalid': form.errors.has('password') }"
-            v-model="form.password"
-            class="form-control"
-            type="password"
-            name="password"
-            placeholder="Contraseña">
-          <span
-            v-if="form.errors.has('password')"
-            class="invalid-feedback"
-            role="alert">
-            <strong v-text="form.errors.get('password')"/>
-          </span>
-        </div>
-      </div>
+    <div class="form-group">
+      <label
+        for="email"
+      >Email</label>
+      <input 
+        v-model="form.token" 
+        type="hidden" 
+        name="token">
+      <input
+        :class="{ 'is-invalid': form.errors.has('email') }"
+        class="form-control"
+        name="email"
+        placeholder="Email"
+        type="email"
+        v-model="form.email">
+      <span
+        class="invalid-feedback"
+        role="alert"
+        v-if="form.errors.has('email')">
+        <strong v-text="form.errors.get('email')"/>
+      </span>
+    </div>
 
-      <div class="form-group row">
-        <label
-          for="password-confirm"
-          class="col-md-4 col-form-label text-md-right">Confirmación de contraseña</label>
+    <div class="form-group">
+      <label
+        for="password"
+      >Contraseña</label>
+      <input
+        :class="{ 'is-invalid': form.errors.has('password') }"
+        class="form-control"
+        name="password"
+        placeholder="Contraseña"
+        type="password"
+        v-model="form.password">
+      <span
+        class="invalid-feedback"
+        role="alert"
+        v-if="form.errors.has('password')">
+        <strong v-text="form.errors.get('password')"/>
+      </span>
+    </div>
 
-        <div class="col-md-6">
-          <input
-            :class="{ 'is-invalid': form.errors.has('password_confirmation') }"
-            v-model="form.password_confirmation"
-            class="form-control"
-            type="password"
-            name="password_confirmation"
-            placeholder="Confirmación de contraseña"
-            required>
-        </div>
-      </div>
+    <div class="form-group">
+      <label
+        for="password-confirm"
+      >Confirmación de contraseña</label>
 
-      <div class="form-group row mb-0">
-        <div class="col-md-6 offset-md-4">
-          <button 
-            type="submit" 
-            class="btn btn-primary">Reestablecer</button>
-        </div>
+      <input
+        :class="{ 'is-invalid': form.errors.has('password_confirmation') }"
+        class="form-control"
+        name="password_confirmation"
+        placeholder="Confirmación de contraseña"
+        type="password"
+        v-model="form.password_confirmation">
       </div>
-    </form>
-  </div>
+    </div>
+    <button
+      :disabled="submitted"
+      class="btn btn-block btn-lg border-0 btn-primary gradient-background--one"
+      type="submit"><span class="fa fa-key pr-2"/>Reestablecer</button>
+  </form>
 </template>
 
 <script>
@@ -103,6 +91,10 @@ export default {
         }
     },
 
+    created() {
+        return this.form.token = this.$route.params.token
+    },
+
     computed: {
         validated() {
             return this.form.errors.any()
@@ -113,15 +105,17 @@ export default {
         reset() {
             this.submitted = true
 
-            this.form.post("/password/reset")
-                .then(response => {
-                    return this.$router.push(response.redirect)
-                })
-                .catch(error => {
-                    this.submitted = false
-                    console.log(error)
-                })
+            this.form.post("/password/reset").then(response => {
+                this.form.reset()
+                this.$snotify.success(response.message)
+                return this.$router.push(response.redirect)
+            }).catch(error => {
+                this.submitted = false
+                if (error.status > 422) {
+                    this.$snotify.error("Ocurrió un error con el siguiente mensaje: " + error.data.message)
+                }
+            })
         },
-    },
+    }
 }
 </script>

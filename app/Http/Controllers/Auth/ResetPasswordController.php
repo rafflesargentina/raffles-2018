@@ -36,4 +36,20 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    /**
+     * Get the response for a successful password reset.
+     *
+     * @param  string  $response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    protected function sendResetResponse($response)
+    {
+        return response()->json(
+            [
+            'message' => trans($response),
+            'redirect' => $this->redirectPath()
+            ], 200, [], JSON_PRETTY_PRINT
+        );
+    }
 }

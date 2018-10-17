@@ -210,6 +210,8 @@ import FormLegal from "@/components/legal/FormLegal"
 
 import "vue2-dropzone/dist/vue2Dropzone.min.css"
 
+const token = sessionStorage.getItem("token") || localStorage.getItem("token")
+
 export default {
 
     name: "PersonalData",
@@ -226,6 +228,7 @@ export default {
                 autoProcessQueue: false,
                 headers: {
                     "X-CSRF-TOKEN": document.head.querySelector("meta[name=\"csrf-token\"]").content,
+                    "Authorization": "Bearer " + token
                 },
                 maxFiles: 1,
                 maxFilesize: 0.2,

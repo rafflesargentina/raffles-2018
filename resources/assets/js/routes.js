@@ -98,21 +98,21 @@ const routes = [
     },
     {
         beforeEnter: middleware.authNotRequired,
-        component: require("@/components/views/auth/passwords/Reset.vue"),
-        meta: {
-            footer: false
-        },
-        name: "PasswordReset",
-        path: "/password/reset"
-    },
-    {
-        beforeEnter: middleware.authNotRequired,
         component: require("@/components/views/auth/passwords/Request.vue"),
         meta: {
             footer: false
         },
         name: "PasswordRequest",
         path: "/password/request"
+    },
+    {
+        beforeEnter: middleware.authNotRequired,
+        component: require("@/components/views/auth/passwords/Reset.vue"),
+        meta: {
+            footer: false
+        },
+        name: "PasswordReset",
+        path: "/password/reset/:token"
     },
     {
         component: require("@/components/views/Services.vue"),
